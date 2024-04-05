@@ -20,6 +20,4 @@ public class Test {
     public String hello2() {
         return "This is home    ";
     }
-
-
 }
