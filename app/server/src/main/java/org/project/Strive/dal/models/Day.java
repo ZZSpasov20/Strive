@@ -2,6 +2,8 @@ package org.project.Strive.dal.models;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "Days")
 public class Day {

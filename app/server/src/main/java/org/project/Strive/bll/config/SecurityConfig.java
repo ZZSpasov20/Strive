@@ -61,7 +61,7 @@ public class SecurityConfig {
 				.csrf(csrf -> csrf.disable())
 				// Configure request authorization
 				.authorizeRequests(authorize -> authorize
-						.requestMatchers("/signup", "/home").permitAll() // Permit all for signup and login
+						.requestMatchers("/signup", "/login").permitAll() // Permit all for signup and login
 						.anyRequest().authenticated() // Require authentication for all other endpoints
 				)
 				// Configure OAuth2 Resource Server

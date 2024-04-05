@@ -12,6 +12,7 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer clientId;
 
+    private String username;
     private String firstName;
     private String lastName;
     private String emailAddress;
@@ -28,6 +29,18 @@ public class Client {
 
     @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<ClientStats> clientStats;
+
+    public Client() {
+    }
+
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public Integer getClientId() {
         return clientId;
