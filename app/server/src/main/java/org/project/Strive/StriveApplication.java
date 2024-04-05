@@ -1,9 +1,13 @@
 package org.project.Strive;
 
+import org.project.Strive.bll.config.RsaKeyProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.stereotype.Controller;
 
 @SpringBootApplication
+@EnableConfigurationProperties(RsaKeyProperties.class)
 public class StriveApplication {
 
 	public static void main(String[] args) {
