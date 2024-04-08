@@ -1,52 +1,53 @@
 package org.project.Strive.dal.models;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+import jakarta.persistence.*;
 import java.util.Date;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table(name = "Clients")
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer clientId;
+    @Column(name = "ClientId")
+    private int clientId;
 
-    private String username;
+    @Column(name = "FirstName", nullable = false)
     private String firstName;
+
+    @Column(name = "LastName", nullable = false)
     private String lastName;
+    @Column(name = "Username", nullable = false)
+    private String username;
+
+    @Column(name = "EmailAddress", nullable = false, length = 200)
     private String emailAddress;
+
+    @Column(name = "Password", nullable = false, length = 20)
     private String password;
 
-    @Temporal(TemporalType.DATE)
+    @Column(name = "BirthDate", nullable = false)
     private Date birthDate;
 
-    private String role;
+    @OneToMany(mappedBy = "client")
+    private List<ClientStat> clientStats;
+
+    @OneToMany(mappedBy = "client")
+    private List<Program> programs;
+
+    // Getters and setters
 
 
-    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Program> programs;
-
-    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<ClientStats> clientStats;
-
-    public Client() {
-    }
-
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public Integer getClientId() {
+    public int getClientId() {
         return clientId;
     }
 
-    public void setClientId(Integer clientId) {
+    public void setClientId(int clientId) {
         this.clientId = clientId;
     }
 
@@ -64,6 +65,14 @@ public class Client {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmailAddress() {
@@ -90,27 +99,19 @@ public class Client {
         this.birthDate = birthDate;
     }
 
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public Set<Program> getPrograms() {
-        return programs;
-    }
-
-    public void setPrograms(Set<Program> programs) {
-        this.programs = programs;
-    }
-
-    public Set<ClientStats> getClientStats() {
+    public List<ClientStat> getClientStats() {
         return clientStats;
     }
 
-    public void setClientStats(Set<ClientStats> clientStats) {
+    public void setClientStats(List<ClientStat> clientStats) {
         this.clientStats = clientStats;
+    }
+
+    public List<Program> getPrograms() {
+        return programs;
+    }
+
+    public void setPrograms(List<Program> programs) {
+        this.programs = programs;
     }
 }
