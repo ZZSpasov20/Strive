@@ -5,5 +5,8 @@ import org.project.Strive.dal.models.DaysExercise;
 import org.project.Strive.dal.models.Exercise;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface DaysExerciseRepository extends JpaRepository<Day, Exercise> {
+import java.util.List;
+
+public interface DaysExerciseRepository extends JpaRepository<DaysExercise, Exercise> {
+    List<DaysExercise> findAllWhereDay(Day day);
 }

@@ -11,7 +11,7 @@ import java.util.List;
 @Service("userDetailsService")
 public class ClientService {
     BCryptPasswordEncoder passwordEncoder;
-    private ClientRepository clientRepository;
+    private final ClientRepository clientRepository;
 
     @Autowired
     public ClientService(ClientRepository clientRepository){
