@@ -26,10 +26,10 @@ public class Record {
     private int reps;
 
     @Column(name = "Weight", nullable = false)
-    private int weight;
+    private double weight;
 
     @Column(name = "Date", nullable = false)
-    private Date date;
+    private String date;
 
     public int getRecordId() {
         return recordId;
@@ -71,19 +71,19 @@ public class Record {
         this.reps = reps;
     }
 
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 }

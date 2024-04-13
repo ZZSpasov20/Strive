@@ -32,15 +32,13 @@ public class Client {
     private String password;
 
     @Column(name = "BirthDate", nullable = false)
-    private Date birthDate;
+    private String birthDate;
 
     @OneToMany(mappedBy = "client")
     private List<ClientStat> clientStats;
 
     @OneToMany(mappedBy = "client")
     private List<Program> programs;
-
-    // Getters and setters
 
 
     public int getClientId() {
@@ -91,11 +89,11 @@ public class Client {
         this.password = password;
     }
 
-    public Date getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 

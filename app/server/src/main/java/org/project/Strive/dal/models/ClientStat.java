@@ -18,14 +18,14 @@ public class ClientStat {
     @JoinColumn(name = "ClientId", nullable = false)
     private Client client;
 
-    @Column(name = "Weight", nullable = false, precision = 6, scale = 2)
-    private BigDecimal  weight;
+    @Column(name = "Weight", nullable = false)
+    private double  weight;
 
-    @Column(name = "Height", nullable = false, precision = 6, scale = 2)
-    private BigDecimal height;
+    @Column(name = "Height", nullable = false)
+    private double height;
 
     @Column(name = "DateOfTheStats", nullable = false)
-    private Date dateOfTheStats;
+    private String dateOfTheStats;
 
     public int getClientStatsId() {
         return clientStatsId;
@@ -43,27 +43,27 @@ public class ClientStat {
         this.client = client;
     }
 
-    public BigDecimal getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    public void setWeight(BigDecimal weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 
-    public BigDecimal getHeight() {
+    public double getHeight() {
         return height;
     }
 
-    public void setHeight(BigDecimal height) {
+    public void setHeight(double height) {
         this.height = height;
     }
 
-    public Date getDateOfTheStats() {
+    public String getDateOfTheStats() {
         return dateOfTheStats;
     }
 
-    public void setDateOfTheStats(Date dateOfTheStats) {
+    public void setDateOfTheStats(String dateOfTheStats) {
         this.dateOfTheStats = dateOfTheStats;
     }
 }
