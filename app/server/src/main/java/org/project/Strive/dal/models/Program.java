@@ -10,12 +10,16 @@ public class Program {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ProgramId")
     private int programId;
+    @ManyToOne
+    @JoinColumn(name = "ClientId", nullable = false)
+    private Client client; // This needs to be added to establish the relationship
+
 
     @Column(name = "Name", nullable = false, length = 50)
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ProgramId")
+    @JoinColumn(name = "DayId")
     private List<Day> days;
 
     public int getProgramId() {

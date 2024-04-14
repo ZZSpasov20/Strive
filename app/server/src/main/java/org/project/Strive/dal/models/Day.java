@@ -14,9 +14,17 @@ public class Day {
     @Column(name = "Name", nullable = false, length = 50)
     private String name;
 
+    @ManyToOne
+    @JoinColumn(name = "ProgramId", nullable = false)
+    private Program program; // This needs to be added to establish the relationship
+
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "DayId")
+    @JoinColumn(name = "DaysExerciseId")
     private List<DaysExercise> daysExercises;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "RecordId")
+    private List<Record> records;
 
     public int getDayId() {
         return dayId;
@@ -32,6 +40,22 @@ public class Day {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Record> getRecords() {
+        return records;
+    }
+
+    public void setRecords(List<Record> records) {
+        this.records = records;
+    }
+
+    public Program getProgram() {
+        return program;
+    }
+
+    public void setProgram(Program program) {
+        this.program = program;
     }
 
     public List<DaysExercise> getDaysExercises() {

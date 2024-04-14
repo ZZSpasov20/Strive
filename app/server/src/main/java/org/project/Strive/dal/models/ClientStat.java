@@ -11,15 +11,19 @@ public class ClientStat {
     @Column(name = "ClientStatsId")
     private int clientStatsId;
 
+    @ManyToOne
+    @JoinColumn(name = "ClientId", nullable = false)
+    private Client client; // This needs to be added to establish the relationship
+
     @Column(name = "Weight", nullable = false)
     private double weight;
 
     @Column(name = "Height", nullable = false)
     private double height;
 
-    @Column(name = "DateOfTheStats", nullable = false)
     @Temporal(TemporalType.DATE)
-    private String dateOfTheStats;
+    @Column(name = "DateOfTheStats", nullable = false)
+    private String dateOfTheStats; // Ensure this is Date type if using @Temporal
 
     public int getClientStatsId() {
         return clientStatsId;

@@ -1,6 +1,7 @@
 package org.project.Strive.bll.controllers;
 
 import org.project.Strive.bll.services.AuthService;
+import org.project.Strive.bll.services.ClientService;
 import org.project.Strive.bll.services.ProgramService;
 import org.project.Strive.dal.models.Client;
 import org.project.Strive.dal.models.Program;
@@ -16,11 +17,13 @@ public class ProgramController {
     private final ProgramService programService;
 
     private final AuthService authService;
+    private final ClientService clientService;
 
     @Autowired
-    public ProgramController(ProgramService programService, AuthService authService) {
+    public ProgramController(ProgramService programService, AuthService authService, ClientService clientService) {
         this.programService = programService;
         this.authService = authService;
+        this.clientService = clientService;
     }
 
     @GetMapping("/getAll")
@@ -31,7 +34,10 @@ public class ProgramController {
 
     @PostMapping("/create")
     public Program createProgram(@RequestBody Program program, Authentication authentication) {
-        return programService.createProgram(program);
+        Client client = authService.getClientByToken(authentication);
+        client.getPrograms().add(program);
+        clientService.saveClient(client);
+        return program;
     }
 
     @PutMapping("/update")

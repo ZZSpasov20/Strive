@@ -26,12 +26,11 @@ public class ClientStatController {
     @GetMapping("/getAll")
     public List<ClientStat> getAllClientStats(Authentication authentication) {
         Client client = authService.getClientByToken(authentication);
-        return clientStatService.getAllClients(client);
+        return client.getClientStats();
     }
 
     @PostMapping("/create")
-    public ClientStat createClientStat(@RequestBody ClientStat clientStat, Authentication authentication) {
-
+    public ClientStat createClientStat(@RequestBody ClientStat clientStat) {
         return clientStatService.createClientStat(clientStat);
     }
 

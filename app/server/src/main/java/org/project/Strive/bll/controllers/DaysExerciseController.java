@@ -1,10 +1,10 @@
 package org.project.Strive.bll.controllers;
 
+import org.project.Strive.bll.services.AuthService;
 import org.project.Strive.bll.services.DaysExerciseService;
-import org.project.Strive.dal.models.Day;
-import org.project.Strive.dal.models.DaysExercise;
-import org.project.Strive.dal.models.Exercise;
+import org.project.Strive.dal.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,10 +12,12 @@ import java.util.List;
 @RequestMapping("daysExercise")
 public class DaysExerciseController {
     private final DaysExerciseService daysExerciseService;
+    private final AuthService authService;
 
     @Autowired
-    public DaysExerciseController(DaysExerciseService daysExerciseService) {
+    public DaysExerciseController(DaysExerciseService daysExerciseService, AuthService authService) {
         this.daysExerciseService = daysExerciseService;
+        this.authService = authService;
     }
 
     @GetMapping("/getAll")
@@ -24,9 +26,10 @@ public class DaysExerciseController {
     }
 
     @PostMapping("/create")
-    public DaysExercise createDaysExercise(@RequestBody DaysExercise daysExercise, Day day, Exercise exercise) {
-        daysExercise.setDay(day);
-        daysExercise.setExercise(exercise);
+    public DaysExercise createDaysExercise(@RequestBody DaysExerciseInputDTO daysExerciseInputDTO)  {
+        DaysExercise daysExercise = daysExerciseInputDTO.getDaysExercise();
+        daysExercise.setDay(daysExerciseInputDTO.getDay());
+        daysExercise.setExercise(daysExerciseInputDTO.getExercise());
         return daysExerciseService.createDaysExercise(daysExercise);
     }
 

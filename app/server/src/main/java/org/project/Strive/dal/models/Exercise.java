@@ -13,7 +13,7 @@ public class Exercise {
     @Column(name = "Name", nullable = false, length = 50)
     private String name;
 
-    @Column(name = "Description", columnDefinition = "VARCHAR(MAX)")
+    @Column(name = "Description")
     private String description;
 
     public int getExerciseId() {

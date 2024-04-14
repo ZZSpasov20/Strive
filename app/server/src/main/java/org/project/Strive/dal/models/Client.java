@@ -20,8 +20,10 @@ public class Client {
 
     @Column(name = "EmailAddress", nullable = false, length = 65)
     private String emailAddress;
+    @Column(name = "Username", nullable = false)
+    private String username;
 
-    @Column(name = "Password", nullable = false, length = 20)
+    @Column(name = "Password", nullable = false)
     private String password;
 
     @Column(name = "BirthDate", nullable = false)
@@ -29,11 +31,11 @@ public class Client {
     private String birthDate;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ClientId")
+    @JoinColumn(name = "ClientStatId")
     private List<ClientStat> clientStats;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ClientId")
+    @JoinColumn(name = "ProgramId")
     private List<Program> programs;
 
     public int getClientId() {

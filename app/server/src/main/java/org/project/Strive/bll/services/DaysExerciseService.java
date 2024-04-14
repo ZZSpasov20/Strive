@@ -18,7 +18,7 @@ public class DaysExerciseService {
     }
 
     public List<DaysExercise> getAll(Day day) {
-        return daysExerciseRepository.findAllWhereDay(day);
+        return daysExerciseRepository.findAllByDay(day);
     }
 
 

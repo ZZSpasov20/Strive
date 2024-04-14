@@ -5,14 +5,17 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "DaysExercises")
 public class DaysExercise {
-    @Id
+    @EmbeddedId
+    private DaysExerciseId daysExerciseId;
+
+    @MapsId("dayId") // Maps dayId in DaysExerciseId to the day entity
     @ManyToOne
-    @JoinColumn(name = "DayId")
+    @JoinColumn(name = "DayId") // This should match the column name in the database
     private Day day;
 
-    @Id
+    @MapsId("exerciseId") // Maps exerciseId in DaysExerciseId to the exercise entity
     @ManyToOne
-    @JoinColumn(name = "ExerciseId")
+    @JoinColumn(name = "ExerciseId") // This should match the column name in the database
     private Exercise exercise;
 
     @Column(name = "ExerciseOrder", nullable = false)

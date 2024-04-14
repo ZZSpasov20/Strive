@@ -1,9 +1,8 @@
 package org.project.Strive.bll.controllers;
 
 import org.project.Strive.bll.services.RecordService;
-
-
-import org.project.Strive.dal.models.Exercise;
+import org.project.Strive.dal.models.RecordInputDTO;
+import org.project.Strive.dal.models.Record;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,13 +19,16 @@ public class RecordController {
     }
 
     @GetMapping("/getAll")
-    public List<Record> getAllRecord(@RequestBody Exercise exercise) {
-
-        return recordService.getAllRecords(exercise);
+    public List<Record> getAllRecord(@RequestBody RecordInputDTO recordInputDTO) {
+        return recordService.getAllRecords(recordInputDTO.getExercise(), recordInputDTO.getDay());
     }
 
     @PostMapping("/create")
-    public Record createRecord(@RequestBody Record record, Exercise exercise) {
+    public Record createRecord(@RequestBody RecordInputDTO recordInputDTO) {
+        Record record = recordInputDTO.getRecord();
+        record.setExercise(recordInputDTO.getExercise());
+        record.setDay(recordInputDTO.getDay());
+
         return recordService.createRecord(record);
     }
 

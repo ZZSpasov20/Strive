@@ -1,6 +1,6 @@
-create database aasd
+create database aasd1231231231231231231234334434343344343
 
-use aasd
+use aasd1231231231231231231234334434343344343
 
 CREATE TABLE Clients(
     [ClientId] INT PRIMARY KEY IDENTITY(1,1),
@@ -60,8 +60,8 @@ ADD FOREIGN KEY ([ExerciseId]) REFERENCES Exercises([ExerciseId]);
 
 CREATE TABLE Records(
     [RecordId] INT PRIMARY KEY IDENTITY(1,1),
+	[DayId] INT NOT NULL,
     [ExerciseId] INT NOT NULL,
-    [ExerciseOrder] INT NOT NULL,
     [SetNumber] INT NOT NULL,
     [Reps] INT NOT NULL,
     [Weight] INT NOT NULL,
@@ -69,3 +69,5 @@ CREATE TABLE Records(
 );
 ALTER TABLE Records
 ADD FOREIGN KEY ([ExerciseId]) REFERENCES Exercises([ExerciseId]);
+ALTER TABLE Records
+ADD FOREIGN KEY ([DayId]) REFERENCES Days([DayId]);

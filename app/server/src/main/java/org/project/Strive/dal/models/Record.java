@@ -11,8 +11,13 @@ public class Record {
     @Column(name = "RecordId")
     private int recordId;
 
-    @Column(name = "ExerciseId", nullable = false)
-    private int exerciseId;  // Direct reference to Exercise ID
+    @ManyToOne
+    @JoinColumn(name = "DayId", nullable = false)
+    private Day day;
+
+    @ManyToOne
+    @JoinColumn(name = "ExerciseId", nullable = false)
+    private Exercise exercise;
 
     @Column(name = "ExerciseOrder", nullable = false)
     private int exerciseOrder;
@@ -28,7 +33,7 @@ public class Record {
 
     @Column(name = "Date", nullable = false)
     @Temporal(TemporalType.DATE)
-    private Date date;
+    private String date;
 
     public int getRecordId() {
         return recordId;
@@ -38,12 +43,21 @@ public class Record {
         this.recordId = recordId;
     }
 
-    public int getExerciseId() {
-        return exerciseId;
+    public Exercise getExercise() {
+        return exercise;
     }
 
-    public void setExerciseId(int exerciseId) {
-        this.exerciseId = exerciseId;
+
+    public Day getDay() {
+        return day;
+    }
+
+    public void setDay(Day day) {
+        this.day = day;
+    }
+
+    public void setExercise(Exercise exercise) {
+        this.exercise = exercise;
     }
 
     public int getExerciseOrder() {
@@ -78,11 +92,11 @@ public class Record {
         this.weight = weight;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 }

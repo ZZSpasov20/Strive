@@ -1,7 +1,9 @@
 package org.project.Strive.bll.services;
 
 
+import org.project.Strive.dal.models.Day;
 import org.project.Strive.dal.models.Exercise;
+import org.project.Strive.dal.models.Record;
 import org.project.Strive.dal.repositories.RecordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,8 +20,8 @@ public class RecordService {
         this.recordRepository = recordRepository;
     }
 
-    public List<Record> getAllRecords(Exercise exercise) {
-        return recordRepository.findAllByExercise(exercise);
+    public List<Record> getAllRecords(Exercise exercise, Day day) {
+        return recordRepository.findByDayAndExercise(day, exercise);
     }
 
     public Record createRecord(Record record) {
