@@ -1,12 +1,9 @@
 package org.project.Strive.bll.controllers;
 
-import org.project.Strive.bll.services.AuthService;
 import org.project.Strive.bll.services.DayService;
-import org.project.Strive.dal.models.Client;
 import org.project.Strive.dal.models.Day;
 import org.project.Strive.dal.models.Program;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,7 +24,6 @@ public class DayController {
 
     @PostMapping("/create")
     public Day createDay(@RequestBody Day day,  Program program) {
-        day.setProgram(program);
         return dayService.createDay(day);
     }
 

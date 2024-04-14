@@ -1,9 +1,6 @@
 package org.project.Strive.dal.models;
 
 import jakarta.persistence.*;
-import org.project.Strive.dal.models.Client;
-
-import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
@@ -14,17 +11,14 @@ public class ClientStat {
     @Column(name = "ClientStatsId")
     private int clientStatsId;
 
-    @ManyToOne
-    @JoinColumn(name = "ClientId", nullable = false)
-    private Client client;
-
     @Column(name = "Weight", nullable = false)
-    private double  weight;
+    private double weight;
 
     @Column(name = "Height", nullable = false)
     private double height;
 
     @Column(name = "DateOfTheStats", nullable = false)
+    @Temporal(TemporalType.DATE)
     private String dateOfTheStats;
 
     public int getClientStatsId() {
@@ -33,14 +27,6 @@ public class ClientStat {
 
     public void setClientStatsId(int clientStatsId) {
         this.clientStatsId = clientStatsId;
-    }
-
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
     }
 
     public double getWeight() {
@@ -66,4 +52,6 @@ public class ClientStat {
     public void setDateOfTheStats(String dateOfTheStats) {
         this.dateOfTheStats = dateOfTheStats;
     }
+
+    // Getters and setters
 }

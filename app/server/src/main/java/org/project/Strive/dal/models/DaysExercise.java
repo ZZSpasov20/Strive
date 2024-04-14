@@ -1,17 +1,18 @@
 package org.project.Strive.dal.models;
 
 import jakarta.persistence.*;
+
 @Entity
 @Table(name = "DaysExercises")
 public class DaysExercise {
     @Id
     @ManyToOne
-    @JoinColumn(name = "DayId", nullable = false)
+    @JoinColumn(name = "DayId")
     private Day day;
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "ExerciseId", nullable = false)
+    @JoinColumn(name = "ExerciseId")
     private Exercise exercise;
 
     @Column(name = "ExerciseOrder", nullable = false)
@@ -19,9 +20,6 @@ public class DaysExercise {
 
     @Column(name = "SetNumber", nullable = false)
     private int setNumber;
-
-    // Getters and setters
-
 
     public Day getDay() {
         return day;

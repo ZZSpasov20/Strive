@@ -1,7 +1,6 @@
 package org.project.Strive.dal.models;
 
 import jakarta.persistence.*;
-
 import java.util.Date;
 
 @Entity
@@ -12,9 +11,8 @@ public class Record {
     @Column(name = "RecordId")
     private int recordId;
 
-    @ManyToOne
-    @JoinColumn(name = "ExerciseId", nullable = false)
-    private Exercise exercise;
+    @Column(name = "ExerciseId", nullable = false)
+    private int exerciseId;  // Direct reference to Exercise ID
 
     @Column(name = "ExerciseOrder", nullable = false)
     private int exerciseOrder;
@@ -26,10 +24,11 @@ public class Record {
     private int reps;
 
     @Column(name = "Weight", nullable = false)
-    private double weight;
+    private int weight;
 
     @Column(name = "Date", nullable = false)
-    private String date;
+    @Temporal(TemporalType.DATE)
+    private Date date;
 
     public int getRecordId() {
         return recordId;
@@ -39,12 +38,12 @@ public class Record {
         this.recordId = recordId;
     }
 
-    public Exercise getExercise() {
-        return exercise;
+    public int getExerciseId() {
+        return exerciseId;
     }
 
-    public void setExercise(Exercise exercise) {
-        this.exercise = exercise;
+    public void setExerciseId(int exerciseId) {
+        this.exerciseId = exerciseId;
     }
 
     public int getExerciseOrder() {
@@ -71,19 +70,19 @@ public class Record {
         this.reps = reps;
     }
 
-    public double getWeight() {
+    public int getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 }

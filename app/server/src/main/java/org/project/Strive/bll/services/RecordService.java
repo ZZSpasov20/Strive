@@ -2,7 +2,6 @@ package org.project.Strive.bll.services;
 
 
 import org.project.Strive.dal.models.Exercise;
-import org.project.Strive.dal.models.Record;
 import org.project.Strive.dal.repositories.RecordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

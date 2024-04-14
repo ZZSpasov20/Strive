@@ -1,7 +1,6 @@
 package org.project.Strive.dal.models;
 
 import jakarta.persistence.*;
-
 import java.util.List;
 
 @Entity
@@ -12,18 +11,12 @@ public class Day {
     @Column(name = "DayId")
     private int dayId;
 
-    @ManyToOne
-    @JoinColumn(name = "ProgramId", nullable = false)
-    private Program program;
-
     @Column(name = "Name", nullable = false, length = 50)
     private String name;
 
-    @OneToMany(mappedBy = "day")
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "DayId")
     private List<DaysExercise> daysExercises;
-
-    // Getters and setters
-
 
     public int getDayId() {
         return dayId;
@@ -31,14 +24,6 @@ public class Day {
 
     public void setDayId(int dayId) {
         this.dayId = dayId;
-    }
-
-    public Program getProgram() {
-        return program;
-    }
-
-    public void setProgram(Program program) {
-        this.program = program;
     }
 
     public String getName() {

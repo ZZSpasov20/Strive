@@ -4,7 +4,6 @@ import org.project.Strive.bll.services.DaysExerciseService;
 import org.project.Strive.dal.models.Day;
 import org.project.Strive.dal.models.DaysExercise;
 import org.project.Strive.dal.models.Exercise;
-import org.project.Strive.dal.models.Program;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

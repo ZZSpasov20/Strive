@@ -2,8 +2,6 @@ package org.project.Strive.dal.models;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
 @Table(name = "Exercises")
 public class Exercise {
@@ -15,17 +13,8 @@ public class Exercise {
     @Column(name = "Name", nullable = false, length = 50)
     private String name;
 
-    @Column(name = "Description", nullable = false, columnDefinition = "VARCHAR(MAX)")
+    @Column(name = "Description", columnDefinition = "VARCHAR(MAX)")
     private String description;
-
-    @OneToMany(mappedBy = "exercise")
-    private List<DaysExercise> daysExercises;
-
-    @OneToMany(mappedBy = "exercise")
-    private List<Record> records;
-
-    // Getters and setters
-
 
     public int getExerciseId() {
         return exerciseId;
@@ -51,19 +40,5 @@ public class Exercise {
         this.description = description;
     }
 
-    public List<DaysExercise> getDaysExercises() {
-        return daysExercises;
-    }
-
-    public void setDaysExercises(List<DaysExercise> daysExercises) {
-        this.daysExercises = daysExercises;
-    }
-
-    public List<Record> getRecords() {
-        return records;
-    }
-
-    public void setRecords(List<Record> records) {
-        this.records = records;
-    }
+    // Getters and setters
 }

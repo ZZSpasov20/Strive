@@ -1,10 +1,8 @@
 package org.project.Strive.bll.controllers;
 
 import org.project.Strive.bll.services.AuthService;
-import org.project.Strive.bll.services.ClientStatService;
 import org.project.Strive.bll.services.ProgramService;
 import org.project.Strive.dal.models.Client;
-import org.project.Strive.dal.models.ClientStat;
 import org.project.Strive.dal.models.Program;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -33,8 +31,6 @@ public class ProgramController {
 
     @PostMapping("/create")
     public Program createProgram(@RequestBody Program program, Authentication authentication) {
-        Client client = authService.getClientByToken(authentication);
-        program.setClient(client);
         return programService.createProgram(program);
     }
 

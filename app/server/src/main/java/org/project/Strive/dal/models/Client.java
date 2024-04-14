@@ -1,10 +1,5 @@
 package org.project.Strive.dal.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
 import jakarta.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -17,29 +12,29 @@ public class Client {
     @Column(name = "ClientId")
     private int clientId;
 
-    @Column(name = "FirstName", nullable = false)
+    @Column(name = "FirstName", nullable = false, length = 50)
     private String firstName;
 
-    @Column(name = "LastName", nullable = false)
+    @Column(name = "LastName", nullable = false, length = 50)
     private String lastName;
-    @Column(name = "Username", nullable = false)
-    private String username;
 
-    @Column(name = "EmailAddress", nullable = false, length = 200)
+    @Column(name = "EmailAddress", nullable = false, length = 65)
     private String emailAddress;
 
     @Column(name = "Password", nullable = false, length = 20)
     private String password;
 
     @Column(name = "BirthDate", nullable = false)
+    @Temporal(TemporalType.DATE)
     private String birthDate;
 
-    @OneToMany(mappedBy = "client")
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ClientId")
     private List<ClientStat> clientStats;
 
-    @OneToMany(mappedBy = "client")
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ClientId")
     private List<Program> programs;
-
 
     public int getClientId() {
         return clientId;
@@ -63,14 +58,6 @@ public class Client {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getEmailAddress() {

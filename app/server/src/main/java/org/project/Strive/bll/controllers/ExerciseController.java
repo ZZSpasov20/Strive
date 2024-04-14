@@ -1,8 +1,6 @@
 package org.project.Strive.bll.controllers;
 
 import org.project.Strive.bll.services.ExerciseService;
-import org.project.Strive.dal.models.Day;
-import org.project.Strive.dal.models.DaysExercise;
 import org.project.Strive.dal.models.Exercise;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
