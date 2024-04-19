@@ -10,6 +10,7 @@ import { RouterLink, RouterView } from 'vue-router'
   html, body{
     margin:0px;
     scroll-behavior: smooth;
+    background-color: #14151A;
   }
   a{
     text-decoration: none;

@@ -141,6 +141,7 @@
         background: #D5FF5F; 
         font-size:24px;
         margin-top: 30px;
+        cursor: pointer;
     }
     .login-page-link{
         font-size: 20px; 
