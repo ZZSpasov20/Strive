@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import router from '@/router';
+
 
 </script>
 
@@ -13,10 +15,10 @@
             <a href="#aboutUsLink"><p>About us</p></a>
             <a href="#"><p>Reviews</p></a>
           </div>
-          <div class="nav__sign-page-link">
+          <RouterLink to="/signUp"><div class="nav__sign-page-link">
             <p>sign up</p>
             <img src="/src/assets/img/nav__sign-page-link-arrow.png" alt="arrow_image">
-          </div>
+          </div></RouterLink>
         </nav>
         <h1 class="start-section__header">Begin Your Fitness Journey</h1>
         <div class="main-info">
@@ -278,7 +280,7 @@
   }
   .main-info__person-img{
     position: absolute;
-    height: 570px;
+    height: 610px;
     left:0;
     right:0;
     bottom: 0;
