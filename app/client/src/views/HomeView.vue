@@ -7,11 +7,11 @@
     <div class="start-section__background">
       <div class="start-section">
         <nav>
-          <img src="" alt="Strive_logo" class="nav__logo">
+          <img src="/src/assets/img/strive-logo--black.png" alt="Strive_logo" class="nav__logo">
           <div class="nav__links-wrapper">
-            <p>Services</p>
-            <p>About us</p>
-            <p>Reviews</p>
+            <a href="#serviceLink"><p>Services</p></a>
+            <a href="#aboutUsLink"><p>About us</p></a>
+            <a href="#"><p>Reviews</p></a>
           </div>
           <div class="nav__sign-page-link">
             <p>sign up</p>
@@ -51,7 +51,7 @@
         </div>
       </div>
     </div>
-    <div class="service">
+    <div class="service" id="serviceLink">
         <h1 class="service__header">We Offer The <span>Following Services</span></h1>
         <div class="service__rows">
           <h1>1/</h1>
@@ -81,18 +81,74 @@
           <img src="/src/assets/img/service__rows-arrow-img.png" alt="arrow image">
         </div>
     </div>
-    <div id="filling">
+    <div class="about-us"  id="aboutUsLink">
+        <div class="top">
+            <div class="top-left">
+                <div class="top-left__button-decorative">
+                    <p>Let’s begin</p>
+                </div>
+                <h1>How to get
+                    started with
+                    Strive
+                </h1>
+                <div class="top-left__button-real">
+                  <p>Let’s begin</p>
+                  <img src="/src/assets/img/top-left__button-real-arrow-img.png" alt="arrow_image">
+                </div>
+            </div>
+            <div class="top-right">
+                <img src="/src/assets/img/top-right__timeline-img.png" alt="numbered_timeline">
+                <h2>Choose your plan</h2>
+                <p>Lorem ipsum dolor sit amet consectetur. Nunc magna tincidunt vel dignissim. Enim enim id elit amet sagittis. Sit convallis fringilla viverra mauris morbi eget dolor mauris eleifend.</p>
+                <h2>Choose your plan</h2>
+                <p>Lorem ipsum dolor sit amet consectetur. Nunc magna tincidunt vel dignissim. Enim enim id elit amet sagittis. Sit convallis fringilla viverra mauris morbi eget dolor mauris eleifend.</p>
+                <h2>Choose your plan</h2>
+                <p>Lorem ipsum dolor sit amet consectetur. Nunc magna tincidunt vel dignissim. Enim enim id elit amet sagittis. Sit convallis fringilla viverra mauris morbi eget dolor mauris eleifend.</p>
+            </div>
+        </div>
+        <div class="bottom">
+          <div class="bottom-left">
+            <div class="bottom-left__button-decorative">
+                <p>Testimony</p>
+            </div>
+            <h1>About our passion
+                to help people
+            </h1>
+            <p>Lorem ipsum dolor sit amet consectetur. Nunc magna tincidunt vel dignissim. Enim enim id elit amet sagittis. Sit convallis fringilla viverra mauris morbi eget dolor mauris eleifend.</p>
+            <div class="bottom-left__button-real">
+              <p>Learn more</p>
+              <img src="/src/assets/img/top-left__button-real-arrow-img.png" alt="arrow_image">
+            </div>
+          </div>
+          <img src="/src/assets/img/bottom-right__image.png" alt="gym image">
+        </div>
+    </div>
+    <div class="footer">
+      <img src="/src/assets/img/strive-logo--white.png" alt="Strive_logo" class="footer-logo">
+      <div class="footer__links-wrapper">
+        <a href="#serviceLink"><p>Services</p></a>
+        <a href="#aboutUsLink"><p>About us</p></a>
+        <a href="#"><p>Reviews</p></a>
+      </div>
+      <div class="footer__social-media">
+          <img src="/src/assets/img/facebook_logo.png" alt="facebook logo">
+          <img src="/src/assets/img/instagram_logo.png" alt="facebook logo">
+          <img src="/src/assets/img/tiktok_logo.png" alt="facebook logo">
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+
   .home-page-wrapper{
     width:100%;
     display: flex;
     flex-direction: column;
     background-color: #14151A;
   }
+
+
 
   .start-section__background{
     width:100%;
@@ -119,6 +175,7 @@
     align-items: center;
   }
   .nav__logo{
+    height: 20px;
   }
   .nav__links-wrapper{
     display: flex;
@@ -240,6 +297,8 @@
     z-index: 0;
   }
 
+
+
   .service{
     width: 100%;
     display: flex;
@@ -252,7 +311,6 @@
         font-size: 52px;
         width: 600px;
       }
-
       
       span{
         color: #D5FF5F;
@@ -297,10 +355,213 @@
 
 
 
-  #filling{
-    height:1500px;
+  .about-us{
     width: 100%;
-    background-color: #14151A;
+    height:1300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 230px;
+    background-color: white;
+    border-bottom:5px solid #FFFF;
+    border-radius: 300px;
   }
+  .top{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    height:unset;
+  }
+  .top-left{
+    width:unset;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+     h1{
+        font-size: 55px;
+        width: 320px;
+        margin-bottom: 35px;
+        margin-top: 25px;
+      }
+  }
+  .top-left__button-decorative{
+    width:170px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-radius: 100px;
+    border-color: #2D2D35;
+    border-width: 2px;
+      p{
+        font-size: 20px;
+        color:#2D2D35;
+        
+      }
+  }
+  .top-left__button-real{
+    width:202px;
+    height: 57px;
+    margin-left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-radius: 100px;
+    border-color: #2D2D35;
+    background-color:#D5FF5F;
+    cursor: pointer;
+    border-width: 2px;
+    -webkit-box-shadow: 21px 15px 0px 5px rgba(0,0,0,1);
+    -moz-box-shadow: 21px 15px 0px 5px rgba(0,0,0,1);
+    box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+      p{
+        font-size: 25px;
+        color:#2D2D35;
+      }
+      img{
+        margin-bottom: -8px;
+      }
+  }
+  .top-right{
+    width:unset;
+    height:100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+
+      img{
+        position: absolute;
+        top:0;
+        left:0;
+
+      }
+      p{
+        font-size: 16px;
+        color:#2D2D35; 
+        width:580px;
+        padding-left: 120px;
+      }
+      h2{
+        font-size: 25px;
+        padding-left: 120px;
+        margin-bottom: 10px;
+        margin-top: 42px;
+      }
+
+  }
+  .top-right h2:nth-child(2){
+    margin-top: 25px;
+  }
+  .bottom{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    height:unset;
+  }
+  .bottom-left{
+    width:unset;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+     h1{
+        font-size: 55px;
+        width: 477px;
+        margin-bottom: 5px;
+        margin-top: 25px;
+      }
+
+      p{
+        font-size: 24px;
+        width: 567px;
+        
+      }
+  }
+  .bottom-left__button-decorative{
+    width:170px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-radius: 100px;
+    border-color: #2D2D35;
+    border-width: 2px;
+      p{  
+        width: unset;
+        font-size: 20px;
+        color:#2D2D35;
+      }
+  }
+  .bottom-left__button-real{
+    width:202px;
+    height: 57px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-radius: 100px;
+    border-color: #2D2D35;
+    background-color:#D5FF5F;
+    cursor: pointer;
+    border-width: 2px;
+    -webkit-box-shadow: 21px 15px 0px 5px rgba(0,0,0,1);
+    -moz-box-shadow: 21px 15px 0px 5px rgba(0,0,0,1);
+    box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+      p{
+        font-size: 25px;
+        color:#2D2D35;
+        width: unset;
+      }
+      img{
+        margin-bottom: -8px;
+      }
+  }
+
+
+
+  .footer{
+    width:100%;
+    height: 250px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    color: white;
+  }
+  .footer-logo{
+    margin-top: 70px;
+  }
+  .footer__links-wrapper{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+      p{
+        font-size: 25px;
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+      a{
+        color: white;
+      }
+      
+  }
+  .footer__social-media{
+    margin-top: 70px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+  }
+
 
 </style>

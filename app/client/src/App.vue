@@ -9,5 +9,9 @@ import { RouterLink, RouterView } from 'vue-router'
 <style >
   html, body{
     margin:0px;
-  }  
+    scroll-behavior: smooth;
+  }
+  a{
+    text-decoration: none;
+  }
 </style>
