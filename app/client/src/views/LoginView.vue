@@ -23,8 +23,8 @@ async function login(){
         <h1>Log in to Strive</h1>
         <form action="">
             <div class="input-and-label-wrapper">
-                <label for="Email" class="input-label">Email<span class="star--modify"> *</span></label>
-                <input v-model="username" type="email" name="Email" placeholder="hristosimeonov@durjavata.com" required>
+                <label for="Username" class="input-label">Username<span class="star--modify"> *</span></label>
+                <input v-model="username" type="text" name="Username" placeholder="HSimeonov1" required>
             </div>
             <div class="input-and-label-wrapper">
                 <label for="Password" class="input-label">Password<span class="star--modify"> *</span></label>
