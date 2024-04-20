@@ -1,11 +1,11 @@
-import { DaysExercise } from "./DaysExercise";
-import { Program } from "./Program";
-import { Record } from "./Record";
+import type { DaysExercise } from "./DaysExercise";
+import type { Program } from "./Program";
+import type { Record } from "./Record";
 
 export interface Day {
-    dayId: number;
-    name: string;
-    program: Program;
-    daysExercises: DaysExercise[];
-    records: Record[];
+    dayId?: number;
+    name?: string;
+    program?: Program;
+    daysExercises?: DaysExercise[];
+    records?: Record[];
 }

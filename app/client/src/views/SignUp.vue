@@ -1,4 +1,24 @@
 <script setup lang="ts">
+import router from '@/router';
+import { AuthService } from '../services/authService'
+import { ref } from 'vue';
+import type { User } from '@/models/User';
+
+const userInfo = ref<User>({})
+
+
+const f_signup = new AuthService().signup
+
+async function signup(){
+    if (userInfo.value) {
+    try {
+      await f_signup(userInfo.value);
+      router.push('/login');
+    } catch (error) {
+      console.error(error);
+    }
+  }  
+}
 
 </script>
 
@@ -12,37 +32,37 @@
             <div class="row-input-wrapper">
                 <div class="input-and-label-wrapper">
                     <label for="FirstName" class="input-label">First Name<span class="star--modify"> *</span></label>
-                    <input type="text" name="FirstName" placeholder="Hristo" required>
+                    <input v-model="userInfo.firstName" type="text" name="FirstName" placeholder="Hristo" required>
                 </div>
                 <div class="input-and-label-wrapper">
                     <label for="LastName" class="input-label">Last Name<span class="star--modify"> *</span></label>
-                    <input type="text" name="LastName" placeholder="Simeonov" required>
+                    <input v-model="userInfo.lastName" type="text" name="LastName" placeholder="Simeonov" required>
                 </div>
             </div>
             <div class="row-input-wrapper">
                 <div class="input-and-label-wrapper">
                     <label for="Email" class="input-label">Email<span class="star--modify"> *</span></label>
-                    <input type="email" name="Email" placeholder="hristosimeonov@durjavata.com" required>
+                    <input v-model="userInfo.emailAddress" type="email" name="Email" placeholder="hristosimeonov@durjavata.com" required>
                 </div>
                 <div class="input-and-label-wrapper">
                     <label for="Username" class="input-label">Username<span class="star--modify"> *</span></label>
-                    <input type="text" name="Username" placeholder="HSimeonov1" required>
+                    <input v-model="userInfo.username" type="text" name="Username" placeholder="HSimeonov1" required>
                 </div>
             </div>
             <div class="row-input-wrapper">
                 <div class="input-and-label-wrapper">
                     <label for="Password" class="input-label">Password<span class="star--modify"> *</span></label>
-                    <input type="password" name="Password" placeholder="Password123" required>
+                    <input v-model="userInfo.password" type="password" name="Password" placeholder="Password123" required>
                 </div>
                 <div class="input-and-label-wrapper">
                     <label for="Date" class="input-label">Date of Birth<span class="star--modify"> *</span></label>
-                    <input type="date" name="Date" placeholder="11/2/2024" required>
+                    <input v-model="userInfo.birthDate" type="date" name="Date" placeholder="11/2/2024" required>
                 </div>
             </div>
-            <div class="form-buttom">
+            <div @click="signup()" class="form-buttom">
                 <p>Sign up</p>
             </div>
-            <RouterLink to="/LoginView"><p class="login-page-link">
+            <RouterLink to="/login"><p class="login-page-link">
                 Alredy have an account? Log in
                 </p>
             </RouterLink>

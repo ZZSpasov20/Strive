@@ -1,7 +1,7 @@
 package org.project.Strive.dal.models;
 
 import jakarta.persistence.*;
-import java.util.Date;
+
 import java.util.List;
 
 @Entity
@@ -26,6 +26,9 @@ public class Client {
     @Column(name = "Password", nullable = false)
     private String password;
 
+    @Column(name = "ProfilePicture", nullable = false)
+    private String profilePicture = "https://ui-avatars.com/api/?name=" + firstName + "+" + lastName;
+
     @Column(name = "BirthDate", nullable = false)
     @Temporal(TemporalType.DATE)
     private String birthDate;
@@ -37,6 +40,7 @@ public class Client {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "ProgramId")
     private List<Program> programs;
+
 
     public int getClientId() {
         return clientId;
@@ -52,6 +56,22 @@ public class Client {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getProfilePicture() {
+        return profilePicture;
+    }
+
+    public void setProfilePicture(String profilePicture) {
+        this.profilePicture = profilePicture;
     }
 
     public String getLastName() {

@@ -1,9 +1,9 @@
-import { Day } from "./Day";
-import { Exercise } from "./Exercise";
+import type { Day } from "./Day";
+import type { Exercise } from "./Exercise";
 
 export interface DaysExercise {
-    day: Day;
-    exercise: Exercise;
-    exerciseOrder: number;
-    setNumber: number;
+    day?: Day;
+    exercise?: Exercise;
+    exerciseOrder?: number;
+    setNumber?: number;
 }

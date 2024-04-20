@@ -1,4 +1,17 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+import { AuthService } from '../services/authService'
+import { routeLocationKey } from 'vue-router';
+const f_login = new AuthService().login;
+
+const username = ref()
+const password = ref()
+
+async function login(){
+    const responseToken = await f_login(username.value, password.value);
+    sessionStorage.setItem('token', responseToken);
+}
+
 
 </script>
 
@@ -11,14 +24,14 @@
         <form action="">
             <div class="input-and-label-wrapper">
                 <label for="Email" class="input-label">Email<span class="star--modify"> *</span></label>
-                <input type="email" name="Email" placeholder="hristosimeonov@durjavata.com" required>
+                <input v-model="username" type="email" name="Email" placeholder="hristosimeonov@durjavata.com" required>
             </div>
             <div class="input-and-label-wrapper">
                 <label for="Password" class="input-label">Password<span class="star--modify"> *</span></label>
-                <input type="password" name="Password" placeholder="Password123" required>
+                <input v-model="password" type="password" name="Password" placeholder="Password123" required>
             </div>
             <p class="forgot-passowrd-text">Forgot Password ?</p>
-            <div class="form-buttom">
+            <div class="form-buttom" @click="login()">
                 <p>Log in</p>
             </div>
         </form>
