@@ -60,6 +60,7 @@ async function login(){
 </template>
 
 <style scoped>
+
     .login-page-wrapper{
         width:100%;
         height: unset;
@@ -75,6 +76,7 @@ async function login(){
                 font-size: 58px;
                 margin-top: 100px;
                 margin-bottom: 15px;
+                font-family: "Hanken Grotesk", sans-serif;
             }
     }
     .logo-wrapper{
@@ -105,6 +107,7 @@ async function login(){
     .input-label{
         font-size: 24px;
         color:white;
+        font-family: "Hanken Grotesk", sans-serif;
     }
     .star--modify{
         color: #D5FF5F;
@@ -122,7 +125,7 @@ async function login(){
         color: #68687A;
         box-sizing: border-box; 
         padding-left: 20px;
-       
+        font-family: "Hanken Grotesk", sans-serif;
             p{
                 margin-left: 10px;
             }
@@ -131,6 +134,7 @@ async function login(){
         outline:none;
         color:white;
         font-size: 24px;
+        font-family: "Hanken Grotesk", sans-serif;
 
     }
     .forgot-passowrd-text{
@@ -139,6 +143,7 @@ async function login(){
         font-size: 20px;
         color: white;
         cursor: pointer;
+        font-family: "Hanken Grotesk", sans-serif;
     }
     .form-buttom{
         width:466px;
@@ -150,6 +155,7 @@ async function login(){
         align-self: center;
         background: #D5FF5F; 
         font-size:24px;
+        font-family: "Hanken Grotesk", sans-serif;
         margin-top: 30px;
         cursor: pointer;
     }
@@ -159,7 +165,7 @@ async function login(){
         display: flex;
         justify-content:space-between ;
         align-items: center;
-
+        font-family: "Hanken Grotesk", sans-serif;
             p{
                 font-size: 20px;
                 color: #68687A;
@@ -184,6 +190,7 @@ async function login(){
             p{
                 font-size: 20px; 
                 color:white;
+                font-family: "Hanken Grotesk", sans-serif;
             }
     }
     .just-spacing{

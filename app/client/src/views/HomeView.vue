@@ -143,6 +143,19 @@ import router from '@/router';
 
 <style scoped>
 
+      @font-face {
+        font-family: Oddval-SemiBoldItalic;
+        src: url(/src/assets/fonts/oddval/Oddval-SemiBoldItalic.ttf);
+      }
+      @font-face {
+        font-family: Oddval-SemiBold;
+        src: url(/src/assets/fonts/oddval/Oddval-SemiBold.ttf);
+      }
+      
+      @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+     
+
+
   .home-page-wrapper{
     width:100%;
     display: flex;
@@ -175,6 +188,10 @@ import router from '@/router';
     display: flex;
     justify-content: space-around;
     align-items: center;
+
+        p{
+          font-family: "Hanken Grotesk", sans-serif;
+        }
   }
   .nav__logo{
     height: 20px;
@@ -211,9 +228,10 @@ import router from '@/router';
   }
   .start-section__header{
     color: #14151A;
-    font-size: 90px;
+    font-size: 80px;
     text-align: center;
-    width: 750px;
+    width: 800px;
+    font-family: Oddval-SemiBold;
   }
   .main-info{
     position: relative;
@@ -234,6 +252,7 @@ import router from '@/router';
         color:#2D2D35;
         font-size: 25px;
         width:300px;
+        font-family: "Hanken Grotesk", sans-serif;
       }
       img{
         width:66px;
@@ -244,6 +263,7 @@ import router from '@/router';
         font-size: 40px;
         margin-bottom: -15px;
         margin-top: 10px;
+        font-family: Oddval-SemiBold;
       }
   }
   .main-info__right{
@@ -253,6 +273,7 @@ import router from '@/router';
     align-items: flex-end;
     z-index: 1;
     margin-top: -140px;
+    
 
       img{
         width:180px;
@@ -264,11 +285,13 @@ import router from '@/router';
         font-size: 25px;
         width:300px;
         text-align: right;
+        font-family: "Hanken Grotesk", sans-serif;
       }
       h4{
         color: #14151A;
         font-size: 22px;
         margin-bottom: -10px;
+        font-family: Oddval-SemiBold;
       }
   }
   .main-info__right p:last-child{
@@ -327,10 +350,11 @@ import router from '@/router';
         h1{
           font-size: 44px;
           width:unset;
+          font-family: Oddval-SemiBold;
         }
 
         .service__rows--header-modified{
-            width:370px;
+            width:470px;
         }
 
 
@@ -338,6 +362,7 @@ import router from '@/router';
           font-size: 22px;
           height: unset;
           width: 500px;
+          font-family: "Hanken Grotesk", sans-serif;
         }
   
   }
@@ -382,10 +407,12 @@ import router from '@/router';
     justify-content: center;
 
      h1{
-        font-size: 55px;
-        width: 320px;
+        font-size: 50px;
+        width: 350px;
         margin-bottom: 35px;
         margin-top: 25px;
+        font-family: Oddval-SemiBold;
+
       }
   }
   .top-left__button-decorative{
@@ -401,7 +428,7 @@ import router from '@/router';
       p{
         font-size: 20px;
         color:#2D2D35;
-        
+        font-family: "Hanken Grotesk", sans-serif;
       }
   }
   .top-left__button-real{
@@ -423,6 +450,7 @@ import router from '@/router';
       p{
         font-size: 25px;
         color:#2D2D35;
+        font-family: "Hanken Grotesk", sans-serif;
       }
       img{
         margin-bottom: -8px;
@@ -448,12 +476,15 @@ import router from '@/router';
         color:#2D2D35; 
         width:580px;
         padding-left: 120px;
+        font-family: "Hanken Grotesk", sans-serif;
       }
       h2{
         font-size: 25px;
         padding-left: 120px;
         margin-bottom: 10px;
         margin-top: 42px;
+        font-family: Oddval-SemiBold;
+
       }
 
   }
@@ -478,12 +509,14 @@ import router from '@/router';
         width: 477px;
         margin-bottom: 5px;
         margin-top: 25px;
+        font-family: Oddval-SemiBold;
+
       }
 
       p{
         font-size: 24px;
         width: 567px;
-        
+        font-family: "Hanken Grotesk", sans-serif;
       }
   }
   .bottom-left__button-decorative{
@@ -500,6 +533,7 @@ import router from '@/router';
         width: unset;
         font-size: 20px;
         color:#2D2D35;
+        font-family: "Hanken Grotesk", sans-serif;
       }
   }
   .bottom-left__button-real{
@@ -518,6 +552,7 @@ import router from '@/router';
     -webkit-box-shadow: 21px 15px 0px 5px rgba(0,0,0,1);
     -moz-box-shadow: 21px 15px 0px 5px rgba(0,0,0,1);
     box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+    font-family: "Hanken Grotesk", sans-serif;
       p{
         font-size: 25px;
         color:#2D2D35;
@@ -552,6 +587,7 @@ import router from '@/router';
         font-size: 25px;
         padding-left: 40px;
         padding-right: 40px;
+        font-family: "Hanken Grotesk", sans-serif;
       }
       a{
         color: white;

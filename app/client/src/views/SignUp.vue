@@ -71,6 +71,8 @@ async function signup(){
 </template>
 
 <style scoped>
+
+        
     .logo-wrapper{
         width:100%;
         height: 80px;
@@ -93,7 +95,8 @@ async function signup(){
                 color: white;
                 font-size: 58px;
                 margin-top: 100px;
-                margin-bottom: 70px;
+                margin-bottom: 70px;  
+                font-family: "Hanken Grotesk", sans-serif;
             }
     }
     form{
@@ -121,6 +124,7 @@ async function signup(){
     }
     .input-label{
         font-size: 24px;
+        font-family: "Hanken Grotesk", sans-serif;
         color:white;
     }
     .star--modify{
@@ -139,15 +143,18 @@ async function signup(){
         color: #68687A;
         box-sizing: border-box; 
         padding-left: 20px;
+        font-family: "Hanken Grotesk", sans-serif;
        
             p{
                 margin-left: 10px;
+                font-family: "Hanken Grotesk", sans-serif;
             }
     }
     input:focus{
         outline:none;
         color:white;
         font-size: 24px;
+        font-family: "Hanken Grotesk", sans-serif;
 
     }
     .form-buttom{
@@ -162,12 +169,14 @@ async function signup(){
         font-size:24px;
         margin-top: 30px;
         cursor: pointer;
+        font-family: "Hanken Grotesk", sans-serif;
     }
     .login-page-link{
         font-size: 20px; 
         color:#D5FF5F;
         text-align: center;
         margin-top: 30px;
+        font-family: "Hanken Grotesk", sans-serif;
     }
 
 </style>
