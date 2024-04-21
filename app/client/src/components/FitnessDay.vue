@@ -88,6 +88,90 @@
                 </div>
                 
             </div>
+            <div class="timeline-wrapper-wrapper">
+                <img src="/src/assets/img/side-arrows2.png" alt="side_arrow">
+                <div class="timeline-wrapper">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-content-wrapper">
+                        <p>01</p>
+                        <div class="timeline-dots"></div>
+                        <p>04</p>
+                    </div>
+                    <div class="timeline-content-wrapper">
+                        <p>02</p>
+                        <div class="timeline-dots"></div>
+                        <p>04</p>
+                    </div>
+                    <div class="timeline-content-wrapper">
+                        <p>03</p>
+                        <div class="timeline-dots"></div>
+                        <p>04</p>
+                    </div>
+                    <div class="timeline-content-wrapper">
+                        <p>04 </p>
+                        <div class="timeline-dots"></div>
+                        <p>04</p>
+                    </div>
+                    <div class="timeline-content-wrapper">
+                        <p>05 </p>
+                        <div class="timeline-dots"></div>
+                        <p>06</p>
+                    </div>
+                    <div class="timeline-content-wrapper">
+                        <p>07 </p>
+                        <div class="timeline-dots"></div>
+                        <p>04</p>
+                    </div>
+                    <div class="timeline-content-wrapper">
+                        <p>08 </p>
+                        <div class="timeline-dots"></div>
+                        <p>04</p>
+                    </div>
+                    <div class="timeline-content-wrapper timeline-content-wrapper--today">
+                        <h1>Today</h1>
+                        <div class="timeline-dots"></div>
+                        <h2>Push</h2>
+                    </div>
+                    <div class="timeline-content-wrapper">
+                        <p>09 </p>
+                        <div class="timeline-dots"></div>
+                        <p>04</p>
+                    </div>
+                    <div class="timeline-content-wrapper">
+                        <p>10 </p>
+                        <div class="timeline-dots"></div>
+                        <p>04</p>
+                    </div>
+                    <div class="timeline-content-wrapper">
+                        <p>11 </p>
+                        <div class="timeline-dots"></div>
+                        <p>04</p>
+                    </div>
+                    <div class="timeline-content-wrapper">
+                        <p>12 </p>
+                        <div class="timeline-dots"></div>
+                        <p>04</p>
+                    </div>
+                    <div class="timeline-content-wrapper">
+                        <p>13 </p>
+                        <div class="timeline-dots"></div>
+                        <p>04</p>
+                    </div>
+                    <div class="timeline-content-wrapper">
+                        <p>14 </p>
+                        <div class="timeline-dots"></div>
+                        <p>04</p>
+                    </div>
+                    <div class="timeline-content-wrapper">
+                        <p>15 </p>
+                        <div class="timeline-dots"></div>
+                        <p>04</p>
+                    </div>
+                    
+                </div>
+                <img src="/src/assets/img/side-arrows.png" alt="side_arrow">
+            </div>
+            
         </div>
     </div>
 </template>
@@ -217,5 +301,78 @@
                 cursor: pointer;
             }
         
+    }
+
+
+    .timeline-wrapper-wrapper{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width:1070px;
+        height:150px;
+        position: relative;
+            img{
+                cursor: pointer;
+            }
+    }
+    .timeline-wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:900px;
+        height:150px;
+        position: relative;
+    }
+    .timeline-line{
+        width: 100%;
+        height: 3px;
+        background: #2D2D35; 
+        position: absolute;
+        left: 0px;
+        margin: auto;
+    }
+    .timeline-content-wrapper{
+        height:100%;
+        width:30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-end;  
+        margin-left: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+
+
+            p{
+                color: #B5B5B5; 
+                font-family: "Hanken Grotesk"; 
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 300; 
+            }
+            h1{
+                color: #2D2D35;
+                font-family: "Hanken Grotesk";
+                font-size: 32px;
+                font-style: normal; 
+            }
+            h2{
+                color: #000;
+                font-family: "Hanken Grotesk";
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 400; 
+            }
+    }
+    .timeline-content-wrapper--today{
+        width: unset;
+        align-items: center;
+        margin-left: 30px;
+    }
+    .timeline-dots{
+        width: 9px;
+        height: 9px; 
+        border-radius: 100%;
+        background-color: #2D2D35;
     }
 </style>
