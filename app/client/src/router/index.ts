@@ -4,6 +4,7 @@ import SignUp from '@/views/SignUp.vue'
 import LoginView from '@/views/LoginView.vue'
 import Nav from '@/components/Nav.vue'
 import MainView from '@/views/MainView.vue'
+import FItnessView from '@/views/FItnessView.vue'
 
 
 
@@ -32,6 +33,13 @@ const router = createRouter({
       path: '/main',
       name: 'mainView',
       component: MainView
+      
+    }
+    ,
+    {
+      path: '/fitness',
+      name: 'fitnessView',
+      component: FItnessView
       
     }
   ]
