@@ -6,7 +6,7 @@
 
     <nav>
         <div class="nav__person-icon">
-
+            <img src="/src/assets/img/S.png" alt="S logo for strive">
         </div>
         <div class="nav__icon-wrapper">
             <img src="/src/assets/img/home-icon.png" alt="home_icon" id="home-current">
@@ -40,6 +40,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
     } 
     .nav__icon-wrapper{
         display: flex;

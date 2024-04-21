@@ -2,9 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import SignUp from '@/views/SignUp.vue'
 import LoginView from '@/views/LoginView.vue'
-import Nav from '@/components/Nav.vue'
 import MainView from '@/views/MainView.vue'
-import FItnessView from '@/views/FItnessView.vue'
+import ProgramView from '@/views/ProgramView.vue'
+import FitnessView from '@/views/FitnessView.vue'
 
 
 
@@ -34,12 +34,17 @@ const router = createRouter({
       name: 'mainView',
       component: MainView
       
-    }
-    ,
+    },
     {
       path: '/fitness',
       name: 'fitnessView',
-      component: FItnessView
+      component: FitnessView
+      
+    },
+    {
+      path: '/program',
+      name: 'programView',
+      component: ProgramView
       
     }
   ]

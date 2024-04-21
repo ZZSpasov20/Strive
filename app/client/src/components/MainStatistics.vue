@@ -1,94 +1,93 @@
 <script setup lang="ts">
-import { ref, defineComponent } from 'vue';
-import { Bar } from 'vue-chartjs';
-import { Line } from 'vue-chartjs'
+    import { ref, defineComponent } from 'vue';
+    import { Bar } from 'vue-chartjs';
+    import { Line } from 'vue-chartjs'
 
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  BarElement,
-  ArcElement,
-  Title,
-  Tooltip,
-  Legend
-} from 'chart.js';
+    import {
+        Chart as ChartJS,
+        CategoryScale,
+        LinearScale,
+        PointElement,
+        LineElement,
+        BarElement,
+        ArcElement,
+        Title,
+        Tooltip,
+        Legend
+    } from 'chart.js';
 
-// Register all necessary chart components
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  BarElement,
-  ArcElement,
-  Title,
-  Tooltip,
-  Legend
-);
+        ChartJS.register(
+        CategoryScale,
+        LinearScale,
+        PointElement,
+        LineElement,
+        BarElement,
+        ArcElement,
+        Title,
+        Tooltip,
+        Legend
+    );
 
 
-const chartData = ref({
-  labels: ['January', 'February', 'March'],
-  datasets: [
-    {
-      label: 'Data One',
-      backgroundColor: '#f87979',
-      data: [40, 20, 12]
-    }
-  ]
-});
+    const chartData = ref({
+    labels: ['January', 'February', 'March'],
+    datasets: [
+        {
+        label: 'Consistency',
+        backgroundColor: '#f87979',
+        data: [15, 17, 12]
+        }
+    ]
+    });
 
-defineComponent({
-  name: 'BarChart',
-  components: { Bar }
-});
+    defineComponent({
+    name: 'BarChart',
+    components: { Bar }
+    });
 
-const lineData = ref({
-    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-  datasets: [
-    {
-      label: 'Monthly Sales',
-      backgroundColor: '#CCDFFF',
-      borderColor: 'rgba(54, 162, 235, 1)',
-      borderWidth: 1,
-      hoverBackgroundColor: 'rgba(54, 162, 235, 0.4)',
-      hoverBorderColor: 'rgba(54, 162, 235, 1)',
-      data: [65, 59, 80, 81, 56, 55, 40],
-      fill: true,
-    }
-  ]
-});
+    const lineData = ref({
+        labels: ['04.4', '11.4', '18.4', '25.4', '1.4'],
+    datasets: [
+        {
+        label: 'Lay pulldown',
+        backgroundColor: '#CCDFFF',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1,
+        hoverBackgroundColor: 'rgba(54, 162, 235, 0.4)',
+        hoverBorderColor: 'rgba(54, 162, 235, 1)',
+        data: [65, 70, 70, 80, 85,],
+        fill: true,
+        }
+    ]
+    });
 
-defineComponent({
-  name: 'Line',
-  components: { Line  }
-});
+    defineComponent({
+    name: 'Line',
+    components: { Line  }
+    });
 
-import { Doughnut } from 'vue-chartjs'
+    import { Doughnut } from 'vue-chartjs'
 
-const DoughnutChart = ref({
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-  datasets: [
-    {
-      label: 'Data One',
-      backgroundColor: '#D6FFCC',
-      data: [40, 39, 10, 40, 39, 80, 40]
-    }
-  ]
-});
+    const DoughnutChart = ref({
+        labels: ['Arms', 'Chest', 'Legs', 'Back', 'Shoulders'],
+    datasets: [
+        {
+        label: 'DConsistency by days',
+        backgroundColor: '#D6FFCC',
+        data: [14, 12, 7, 15, 13]
+        }
+    ]
+    });
 
-const DoughnutChartOptions = ref({
-    responsive: true,
-  maintainAspectRatio: false
-});
+    const DoughnutChartOptions = ref({
+        responsive: true,
+    maintainAspectRatio: false
+    });
 
-defineComponent({
-  name: 'Doughnut',
-  components: { Doughnut  }
-});
+    defineComponent({
+    name: 'Doughnut',
+    components: { Doughnut  }
+    });
 
 </script>
 
