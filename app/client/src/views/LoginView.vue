@@ -60,7 +60,7 @@ async function login(){
 </template>
 
 <style scoped>
-
+     @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
     .login-page-wrapper{
         width:100%;
         height: unset;

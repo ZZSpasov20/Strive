@@ -142,7 +142,7 @@ import router from '@/router';
 </template>
 
 <style scoped>
-
+       @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
       @font-face {
         font-family: Oddval-SemiBoldItalic;
         src: url(/src/assets/fonts/oddval/Oddval-SemiBoldItalic.ttf);
@@ -152,7 +152,7 @@ import router from '@/router';
         src: url(/src/assets/fonts/oddval/Oddval-SemiBold.ttf);
       }
       
-      @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+     
      
 
 

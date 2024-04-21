@@ -1,7 +1,96 @@
 <script setup lang="ts">
+import { ref, defineComponent } from 'vue';
+import { Bar } from 'vue-chartjs';
+import { Line } from 'vue-chartjs'
+
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  ArcElement,
+  Title,
+  Tooltip,
+  Legend
+} from 'chart.js';
+
+// Register all necessary chart components
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  ArcElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+
+const chartData = ref({
+  labels: ['January', 'February', 'March'],
+  datasets: [
+    {
+      label: 'Data One',
+      backgroundColor: '#f87979',
+      data: [40, 20, 12]
+    }
+  ]
+});
+
+defineComponent({
+  name: 'BarChart',
+  components: { Bar }
+});
+
+const lineData = ref({
+    labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+  datasets: [
+    {
+      label: 'Monthly Sales',
+      backgroundColor: '#CCDFFF',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1,
+      hoverBackgroundColor: 'rgba(54, 162, 235, 0.4)',
+      hoverBorderColor: 'rgba(54, 162, 235, 1)',
+      data: [65, 59, 80, 81, 56, 55, 40],
+      fill: true,
+    }
+  ]
+});
+
+defineComponent({
+  name: 'Line',
+  components: { Line  }
+});
+
+import { Doughnut } from 'vue-chartjs'
+
+const DoughnutChart = ref({
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  datasets: [
+    {
+      label: 'Data One',
+      backgroundColor: '#D6FFCC',
+      data: [40, 39, 10, 40, 39, 80, 40]
+    }
+  ]
+});
+
+const DoughnutChartOptions = ref({
+    responsive: true,
+  maintainAspectRatio: false
+});
+
+defineComponent({
+  name: 'Doughnut',
+  components: { Doughnut  }
+});
 
 </script>
-
 
 <template>
 
@@ -47,6 +136,19 @@
             </div>
             <div class="main-statistics__row3"><p class="diagrams-h">Diagrams</p></div>
             <div class="main-statistics__row4">
+                <div class="row4-div">
+                    
+                    <Bar :data="chartData" />
+                   
+                </div>
+                <div class="row4-div">
+                    <Line :data="lineData"  />  
+                </div>
+                <div class="row4-div">
+                    <Doughnut :data="DoughnutChart" :options="DoughnutChartOptions" />
+                </div>
+
+                
 
             </div>
         </div>
@@ -192,10 +294,34 @@
         box-sizing: content-box;
     }
     .main-statistics__row4{
-        display: flex;
+      
         width: 100%;
         height: 100%;
-        background-color: rebeccapurple;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x:scroll;
+         overflow-y:hidden; 
+        -webkit-overflow-scrolling: touch;
     }
+
+    .row4-div{
+        margin-left: 80px;
+        margin-right: 10px;
+        flex: 0 0 auto;
+        width:490px;
+        height: 300px;
+        border-radius: 26px;
+    }
+    
+    .main-statistics__row4 div:nth-child(1){
+        margin-left: 120px;
+        background-color: #CCDFFF;
+    } 
+    .main-statistics__row4 div:nth-child(2){
+        background-color: #D6FFCC;
+    }   
+    .main-statistics__row4 div:nth-child(3){
+        background-color: #FEDCF3;
+    }   
 
 </style>
