@@ -16,7 +16,6 @@
                 </div>
             </div>
             <div class="program-wrapper">
-
                 <div class="program-row program-row-first">
                     <p class="stats-wraper--headings">Exercise</p>
                     <div class="stats-wraper stats-wraper--headings">
