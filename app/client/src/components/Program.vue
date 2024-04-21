@@ -1,4 +1,24 @@
 <script setup lang="ts">
+    import { ref, onMounted, toRaw } from 'vue'
+    import type { Program } from "../models/Program"
+    import { OtherService } from '../services/otherService';
+    import type { Record } from "../models/Record";
+
+    const programs = ref<Program[]>([]);
+    const otherService = new OtherService()
+
+    onMounted(async () => {
+    try {
+        // Fetch data and assert the type if you're confident the structure matches.
+        const records = await otherService.getAllPrograms();
+        programs.value = records as Program[];  // Type assertion
+        console.log("Assigned Programs:", toRaw(programs.value));
+    } catch (error) {
+        console.error("Failed to fetch records:", error);
+    }
+
+    });
+
 
 </script>
 
@@ -16,10 +36,10 @@
                 </div>
             </div>
             <div class="program-row-wrapper">
-                <div class="program-row">
+                <div v-for="prgoram in programs" class="program-row">
                     <div class="program-row__name-wrapper">
                         <p>Workout Name</p>
-                        <h2>Push, Pull, Legs</h2>
+                        <h2>     {{ prgoram.name }}</h2>
                     </div>
                     <div class="program-row__icons-wrapper">
                         <div  class="program-row__icons program-row__icons--green">
@@ -33,23 +53,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="program-row">
-                    <div class="program-row__name-wrapper">
-                        <p>Workout Name</p>
-                        <h2>Arnold split</h2>
-                    </div>
-                    <div class="program-row__icons-wrapper">
-                        <div  class="program-row__icons program-row__icons--green">
-                            <img src="/src/assets/img/tick-icon.png" alt="tick-icon">
-                        </div>
-                        <div  class="program-row__icons program-row__icons--yellow">
-                            <img src="/src/assets/img/pencil-icon.png" alt="pencil-icon">
-                        </div>
-                        <div  class="program-row__icons program-row__icons--red">
-                                <img src="/src/assets/img/bin-icon.png" alt="bin-icon">
-                        </div>
-                    </div>
-                </div>
+               
                 
             </div>
 
