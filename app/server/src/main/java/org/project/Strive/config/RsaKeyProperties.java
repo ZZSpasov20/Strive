@@ -1,4 +1,4 @@
-package org.project.Strive.bll.config;
+package org.project.Strive.config;
 
 
 import org.springframework.boot.context.properties.ConfigurationProperties;

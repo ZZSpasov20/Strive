@@ -1,7 +1,7 @@
-package org.project.Strive.dal.models;
+package org.project.Strive.models;
 
 import jakarta.persistence.*;
-import java.util.Date;
+
 
 @Entity
 @Table(name = "Records")
@@ -34,6 +34,10 @@ public class Record {
     @Column(name = "Date", nullable = false)
     @Temporal(TemporalType.DATE)
     private String date;
+
+    @Column(name = "DeteledAt", nullable = true)
+    @Temporal(TemporalType.DATE)
+    private String deteledAt;
 
     public int getRecordId() {
         return recordId;
@@ -98,5 +102,13 @@ public class Record {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getDeteledAt() {
+        return deteledAt;
+    }
+
+    public void setDeteledAt(String deteledAt) {
+        this.deteledAt = deteledAt;
     }
 }

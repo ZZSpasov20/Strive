@@ -1,9 +1,9 @@
-package org.project.Strive.bll.controllers;
+package org.project.Strive.controllers;
 
-import org.project.Strive.bll.services.AuthService;
-import org.project.Strive.bll.services.ClientService;
-import org.project.Strive.dal.models.Client;
-import org.project.Strive.dal.models.LoginRequest;
+import org.project.Strive.services.AuthService;
+import org.project.Strive.models.Client;
+import org.project.Strive.models.LoginRequest;
+import org.project.Strive.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

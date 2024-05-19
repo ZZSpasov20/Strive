@@ -1,7 +1,7 @@
-create database aasd1231231231231231231234334434343344343
-
-use aasd1231231231231231231234334434343344343
-
+CREATE DATABASE StriveProject
+ 
+USE StriveProject
+  
 CREATE TABLE Clients(
     [ClientId] INT PRIMARY KEY IDENTITY(1,1),
     [FirstName] NVARCHAR(50) NOT NULL,
@@ -10,23 +10,17 @@ CREATE TABLE Clients(
     [EmailAddress] VARCHAR(65) NOT NULL,
     [Password] NVARCHAR(100) NOT NULL,
 	[ProfilePicture] VARCHAR(255) NOT NULL, 
-    [BirthDate] DATE NOT NULL
+    [BirthDate] DATE NOT NULL,
+	[DeletedAt] DATE NULL
 );
 
-CREATE TABLE ClientStats(
-    [ClientStatsId] INT PRIMARY KEY IDENTITY(1,1),
-    [ClientId] INT NOT NULL,
-    [Weight] DECIMAL NOT NULL,
-    [Height] DECIMAL NOT NULL,
-    [DateOfTheStats] DATE NOT NULL
-);
-ALTER TABLE ClientStats
-ADD FOREIGN KEY ([ClientId]) REFERENCES Clients([ClientId]);
 
 CREATE TABLE Programs(
     [ProgramId] INT PRIMARY KEY IDENTITY(1,1),
     [ClientId] INT NOT NULL,
-    [Name] VARCHAR(50) NOT NULL
+    [Name] VARCHAR(50) NOT NULL,
+	[CreatedAt] DATE NOT NULL,
+	[DeletedAt] DATE NULL
 );
 ALTER TABLE Programs
 ADD FOREIGN KEY ([ClientId]) REFERENCES Clients([ClientId]);
@@ -34,7 +28,8 @@ ADD FOREIGN KEY ([ClientId]) REFERENCES Clients([ClientId]);
 CREATE TABLE Days(
     [DayId] INT PRIMARY KEY IDENTITY(1,1),
     [ProgramId] INT NOT NULL,
-    [Name] VARCHAR(50) NOT NULL
+    [Name] VARCHAR(50) NOT NULL,
+	[DeletedAt] DATE NULL
 );
 ALTER TABLE Days
 ADD FOREIGN KEY ([ProgramId]) REFERENCES Programs([ProgramId]);
@@ -50,7 +45,8 @@ CREATE TABLE DaysExercises(
     [DayId] INT NOT NULL,
     [ExerciseId] INT NOT NULL,
     [ExerciseOrder] INT NOT NULL,
-    [SetNumber] INT NOT NULL
+    [SetNumber] INT NOT NULL,
+	[DeletedAt] DATE NULL
     PRIMARY KEY ([DayId],[ExerciseId])
 );
 ALTER TABLE DaysExercises
@@ -65,7 +61,8 @@ CREATE TABLE Records(
     [SetNumber] INT NOT NULL,
     [Reps] INT NOT NULL,
     [Weight] INT NOT NULL,
-    [Date] DATE NOT NULL
+    [Date] DATE NOT NULL,
+	[DeletedAt] DATE NULL
 );
 ALTER TABLE Records
 ADD FOREIGN KEY ([ExerciseId]) REFERENCES Exercises([ExerciseId]);

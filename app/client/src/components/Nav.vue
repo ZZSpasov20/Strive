@@ -9,11 +9,11 @@
             <img src="/src/assets/img/S.png" alt="S logo for strive">
         </div>
         <div class="nav__icon-wrapper">
-            <img src="/src/assets/img/home-icon.png" alt="home_icon" id="home-current">
-            <img src="/src/assets/img/calendar-icon.png" alt="calendar_icon" id="calendar-current">
-            <img src="/src/assets/img/stats-icon.png" alt="stats_icon" id="stats-current">
-            <img src="/src/assets/img/exercise-search-icon.png" alt="exercise-search_icon" id="exercise-search-current">
-            <img src="/src/assets/img/chat-icon.png" alt="exercise-search_icon" id="exercise-search-current">
+            <img src="/src/assets/img/home-icon.png" alt="home_icon" id="home-current" class="current">
+            <img src="/src/assets/img/calendar-icon.png" alt="calendar_icon" id="calendar-current" class="current">
+            <img src="/src/assets/img/stats-icon.png" alt="stats_icon" id="stats-current" class="current">
+            <img src="/src/assets/img/exercise-search-icon.png" alt="exercise-search_icon" id="exercise-search-current" class="current">
+            <img src="/src/assets/img/chat-icon.png" alt="exercise-search_icon" id="exercise-search-current" class="current">
         </div>
         <img src="/src/assets/img/logout-icon.png" class ="logout-icon" alt="logout_icon">
     </nav>

@@ -1,4 +1,4 @@
-package org.project.Strive.dal.models;
+package org.project.Strive.models;
 
 import jakarta.persistence.*;
 
@@ -15,6 +15,8 @@ public class Exercise {
 
     @Column(name = "Description")
     private String description;
+
+
 
     public int getExerciseId() {
         return exerciseId;
@@ -39,6 +41,8 @@ public class Exercise {
     public void setDescription(String description) {
         this.description = description;
     }
+
+
 
     // Getters and setters
 }

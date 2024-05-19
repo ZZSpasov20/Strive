@@ -1,7 +1,9 @@
-package org.project.Strive.dal.models;
+package org.project.Strive.models;
 
 import jakarta.persistence.*;
+
 import java.util.List;
+
 
 @Entity
 @Table(name = "Programs")
@@ -21,6 +23,13 @@ public class Program {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "DayId")
     private List<Day> days;
+    @Column(name = "CreatedAt", nullable = true)
+    @Temporal(TemporalType.DATE)
+    private String CreatedAt;
+
+    @Column(name = "DeteledAt", nullable = true)
+    @Temporal(TemporalType.DATE)
+    private String deteledAt;
 
     public int getProgramId() {
         return programId;
@@ -44,6 +53,30 @@ public class Program {
 
     public void setDays(List<Day> days) {
         this.days = days;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public String getCreatedAt() {
+        return CreatedAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        CreatedAt = createdAt;
+    }
+
+    public String getDeteledAt() {
+        return deteledAt;
+    }
+
+    public void setDeteledAt(String deteledAt) {
+        this.deteledAt = deteledAt;
     }
 
     // Getters and setters

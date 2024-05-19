@@ -1,4 +1,4 @@
-package org.project.Strive.dal.models;
+package org.project.Strive.models;
 
 public class LoginRequest {
     String username;

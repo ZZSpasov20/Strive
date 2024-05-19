@@ -1,4 +1,4 @@
-package org.project.Strive.dal.models;
+package org.project.Strive.models;
 
 import jakarta.persistence.*;
 
@@ -34,12 +34,12 @@ public class Client {
     private String birthDate;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ClientStatId")
-    private List<ClientStat> clientStats;
-
-    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "ProgramId")
     private List<Program> programs;
+
+    @Column(name = "DeteledAt", nullable = true)
+    @Temporal(TemporalType.DATE)
+    private String deteledAt;
 
 
     public int getClientId() {
@@ -106,19 +106,19 @@ public class Client {
         this.birthDate = birthDate;
     }
 
-    public List<ClientStat> getClientStats() {
-        return clientStats;
-    }
-
-    public void setClientStats(List<ClientStat> clientStats) {
-        this.clientStats = clientStats;
-    }
-
     public List<Program> getPrograms() {
         return programs;
     }
 
     public void setPrograms(List<Program> programs) {
         this.programs = programs;
+    }
+
+    public String getDeteledAt() {
+        return deteledAt;
+    }
+
+    public void setDeteledAt(String deteledAt) {
+        this.deteledAt = deteledAt;
     }
 }

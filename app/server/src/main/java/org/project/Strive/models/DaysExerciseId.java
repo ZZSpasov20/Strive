@@ -1,4 +1,4 @@
-package org.project.Strive.dal.models;
+package org.project.Strive.models;
 
 import jakarta.persistence.Embeddable;
 

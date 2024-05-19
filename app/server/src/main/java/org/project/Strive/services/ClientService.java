@@ -1,7 +1,8 @@
-package org.project.Strive.bll.services;
+package org.project.Strive.services;
 
-import org.project.Strive.dal.models.Client;
-import org.project.Strive.dal.repositories.ClientRepository;
+
+import org.project.Strive.models.Client;
+import org.project.Strive.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

@@ -1,5 +1,5 @@
-package org.project.Strive.bll.services;
-import org.project.Strive.dal.models.Client;
+package org.project.Strive.services;
+import org.project.Strive.models.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

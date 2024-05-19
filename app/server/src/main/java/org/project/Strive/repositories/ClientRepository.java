@@ -1,6 +1,6 @@
-package org.project.Strive.dal.repositories;
+package org.project.Strive.repositories;
 
-import org.project.Strive.dal.models.Client;
+import org.project.Strive.models.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

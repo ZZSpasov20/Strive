@@ -1,4 +1,4 @@
-package org.project.Strive.dal.models;
+package org.project.Strive.models;
 
 import jakarta.persistence.*;
 
@@ -23,6 +23,18 @@ public class DaysExercise {
 
     @Column(name = "SetNumber", nullable = false)
     private int setNumber;
+
+    @Column(name = "DeteledAt", nullable = true)
+    @Temporal(TemporalType.DATE)
+    private String deteledAt;
+
+    public String getDeteledAt() {
+        return deteledAt;
+    }
+
+    public void setDeteledAt(String deteledAt) {
+        this.deteledAt = deteledAt;
+    }
 
     public Day getDay() {
         return day;
